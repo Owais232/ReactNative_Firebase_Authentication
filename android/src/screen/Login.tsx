@@ -1,17 +1,20 @@
 import { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View, ActivityIndicator, Alert } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View, ActivityIndicator, TouchableOpacity } from "react-native";
 import auth from '@react-native-firebase/auth';
+import { useAuth } from "../context/Authcontext";
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [loading, setLoading] = useState(false);
+    const { setUser } = useAuth();
 
     const handleLogin = async () => {
         setLoading(true);
 
         try {
-            await auth().signInWithEmailAndPassword(email, pass);
+            const userCredential = await auth().signInWithEmailAndPassword(email, pass);
+            setUser(userCredential.user);
             navigation.navigate('Home');
         } catch (error) {
             console.error(error);
