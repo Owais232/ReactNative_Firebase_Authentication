@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ActivityIndicator, Button, StyleSheet, Text, TextInput, TouchableOpacity, View, Alert } from "react-native";
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 
-const Register = ({ navigation }) => {
+const Register:React.FC = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [pass, setPass] = useState('');
