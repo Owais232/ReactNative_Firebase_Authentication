@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "468176690398",
+    "firebase_url": "https://authentication-check-ee25b-default-rtdb.firebaseio.com",
     "project_id": "authentication-check-ee25b",
     "storage_bucket": "authentication-check-ee25b.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.states"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "468176690398-sppecbc68odd386cdhd5ok9di7hljorq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.states",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "468176690398-i9fr2t1dm1tpkh1ch7dsqohbsa6i2jsn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCujLeGAhVyqOyGYMH7jZTsJuJJyTR-mao"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468176690398-i9fr2t1dm1tpkh1ch7dsqohbsa6i2jsn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

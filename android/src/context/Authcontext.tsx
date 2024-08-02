@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 interface AuthContextType {
     user: FirebaseAuthTypes.User | null;
@@ -14,6 +15,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Configure Google Sign-In
+        GoogleSignin.configure({
+            webClientId: '468176690398-i9fr2t1dm1tpkh1ch7dsqohbsa6i2jsn.apps.googleusercontent.com',
+        });
+
         const unsubscribe = auth().onAuthStateChanged(async (user) => {
             if (user) {
                 await AsyncStorage.setItem('user', JSON.stringify(user));
